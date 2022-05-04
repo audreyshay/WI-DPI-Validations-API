@@ -1,0 +1,1315 @@
+﻿{
+  "host": "%HOST%",
+  "basePath": "%BASE_PATH%",
+  "swagger": "2.0",
+  "schemes": [
+    "%SCHEME%"
+  ],
+  "info": {
+    "title": "Validations API Endpoint",
+    "version": "1.0.0",
+    "description": "L2 data validation from WI DPI."
+  },
+  "paths": {
+    "/ed-fi-xvalidations/ruleStatusDescriptors": {
+      "get": {
+        "tags": [
+          "ruleStatusDescriptors"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RuleStatusDescriptor"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/ruleStatusDescriptors/{id}": {
+      "get": {
+        "tags": [
+          "ruleStatusDescriptors"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/RuleStatusDescriptor"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/runStatusDescriptors": {
+      "get": {
+        "tags": [
+          "runStatusDescriptors"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RunStatusDescriptor"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/runStatusDescriptors/{id}": {
+      "get": {
+        "tags": [
+          "runStatusDescriptors"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/RunStatusDescriptor"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/severityDescriptors": {
+      "get": {
+        "tags": [
+          "severityDescriptors"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SeverityDescriptor"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/severityDescriptors/{id}": {
+      "get": {
+        "tags": [
+          "severityDescriptors"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/SeverityDescriptor"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationLogicTypeDescriptors": {
+      "get": {
+        "tags": [
+          "validationLogicTypeDescriptors"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidationLogicTypeDescriptor"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationLogicTypeDescriptors/{id}": {
+      "get": {
+        "tags": [
+          "validationLogicTypeDescriptors"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/ValidationLogicTypeDescriptor"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationResults": {
+      "get": {
+        "tags": [
+          "validationResults"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "resultIdentifier",
+            "description": "The unique id for a validation result.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "runIdentifier",
+            "description": "The unique Id for the run",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ruleIdentifier",
+            "description": "The the unique Id for the validation rule.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ruleSource",
+            "description": "The source or origin of the rule.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "educationOrganizationId",
+            "description": "The EducationOrganizationId for the organization the validation result is for.",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "studentUniqueId",
+            "description": "The StudentUniqueId for the student the validation result is related to.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "staffUniqueId",
+            "description": "The StaffUniqueId for the staff the validation result is related to.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "namespace",
+            "description": "The Namespace the validation result is for.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "resourceId",
+            "description": "The unique identifier in the ODS that is used to reference a specific resource.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "resourceType",
+            "description": "The resource associated with the validation rule.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidationResult"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationResults/{id}": {
+      "get": {
+        "tags": [
+          "validationResults"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/ValidationResult"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationRuns": {
+      "get": {
+        "tags": [
+          "validationRuleRuns"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "runIdentifier",
+            "description": "The unique Id for a run",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "host",
+            "description": "The name of the Host or ODS that was evaluated in a run",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "validationEngine",
+            "description": "A reference to the validation engine that was responsible for this run",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidationRuleRun"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationRuns/{id}": {
+      "get": {
+        "tags": [
+          "validationRuleRuns"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/ValidationRuleRun"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationRules": {
+      "get": {
+        "tags": [
+          "validationRules"
+        ],
+        "summary": "Retrieves specific resources using the resource's property values (using the \"Get\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ruleIdentifier",
+            "description": "The unique Id for a validation rule.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ruleSource",
+            "description": "The source or origin of the rule.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ruleStatus",
+            "description": "The current status of if the rule. Examples are 'Active', 'Under Analysis', 'Inactive', 'Deprecated'.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "description": "A category for the type of validation rule.  Examples might be 'Student Demographics', 'Special Education', or 'Attendance'",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "severityDescriptor",
+            "description": "Whether the validation rule is a 'Warning', 'Minor Validation Error', 'Major Validation Error' or other value standardized by the API",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "externalRuleId",
+            "description": "Refers back to a unique identifier for this rule in another system (such as a state-maintained repository of validation rules)",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resources were successfully retrieved.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidationRule"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    },
+    "/ed-fi-xvalidations/validationRules/{id}": {
+      "get": {
+        "tags": [
+          "validationRules"
+        ],
+        "summary": "Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "A resource identifier that uniquely identifies the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested resource was successfully retrieved.",
+            "schema": {
+              "$ref": "#/definitions/ValidationRule"
+            }
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RuleStatusDescriptor": {
+      "required": [
+        "codeValue",
+        "namespace",
+        "ruleStatusDescriptorId",
+        "shortDescription"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ruleStatusDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "codeValue": {
+          "description": "A code or abbreviation that is used to refer to the descriptor.",
+          "maxLength": 50,
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the descriptor.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "effectiveBeginDate": {
+          "format": "date-time",
+          "description": "The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "description": "The end date of the period when the descriptor is in effect.",
+          "type": "string"
+        },
+        "namespace": {
+          "description": "A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "priorDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "shortDescription": {
+          "description": "A shortened description for the descriptor.",
+          "maxLength": 75,
+          "type": "string"
+        }
+      }
+    },
+    "RunStatusDescriptor": {
+      "required": [
+        "codeValue",
+        "namespace",
+        "runStatusDescriptorId",
+        "shortDescription"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "runStatusDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "codeValue": {
+          "description": "A code or abbreviation that is used to refer to the descriptor.",
+          "maxLength": 50,
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the descriptor.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "effectiveBeginDate": {
+          "format": "date-time",
+          "description": "The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "description": "The end date of the period when the descriptor is in effect.",
+          "type": "string"
+        },
+        "namespace": {
+          "description": "A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "priorDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "shortDescription": {
+          "description": "A shortened description for the descriptor.",
+          "maxLength": 75,
+          "type": "string"
+        }
+      }
+    },
+    "SeverityDescriptor": {
+      "required": [
+        "codeValue",
+        "namespace",
+        "severityDescriptorId",
+        "shortDescription"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "severityDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "codeValue": {
+          "description": "A code or abbreviation that is used to refer to the descriptor.",
+          "maxLength": 50,
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the descriptor.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "effectiveBeginDate": {
+          "format": "date-time",
+          "description": "The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "description": "The end date of the period when the descriptor is in effect.",
+          "type": "string"
+        },
+        "namespace": {
+          "description": "A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "priorDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "shortDescription": {
+          "description": "A shortened description for the descriptor.",
+          "maxLength": 75,
+          "type": "string"
+        }
+      }
+    },
+    "ValidationLogicTypeDescriptor": {
+      "description": "This descriptor describes the type of validation logic",
+      "required": [
+        "codeValue",
+        "namespace",
+        "shortDescription",
+        "validationLogicTypeDescriptorId"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "validationLogicTypeDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "codeValue": {
+          "description": "A code or abbreviation that is used to refer to the descriptor.",
+          "maxLength": 50,
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the descriptor.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "effectiveBeginDate": {
+          "format": "date-time",
+          "description": "The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.",
+          "type": "string"
+        },
+        "effectiveEndDate": {
+          "format": "date-time",
+          "description": "The end date of the period when the descriptor is in effect.",
+          "type": "string"
+        },
+        "namespace": {
+          "description": "A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "priorDescriptorId": {
+          "format": "int32",
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "type": "integer"
+        },
+        "shortDescription": {
+          "description": "A shortened description for the descriptor.",
+          "maxLength": 75,
+          "type": "string"
+        }
+      }
+    },
+    "Link": {
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "rel": {
+          "description": "Describes the nature of the relationship to the referenced resource",
+          "type": "string"
+        },
+        "href": {
+          "description": "The URL to the related resource",
+          "type": "string"
+        }
+      }
+    },
+    "ValidationRuleReference": {
+      "type": "object",
+      "properties": {
+        "ruleIdentifier": {
+          "description": "The unique Id for a validation rule.",
+          "type": "string"
+        },
+        "ruleSource": {
+          "description": "The source or origin of the rule.",
+          "type": "string"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Link"
+            }
+          ],
+          "readOnly": true
+        }
+      }
+    },
+    "ValidationRuleRunReference": {
+      "type": "object",
+      "properties": {
+        "runIdentifier": {
+          "description": "This is a unique Id for each run",
+          "type": "string"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Link"
+            }
+          ],
+          "readOnly": true
+        }
+      }
+    },
+    "EducationOrganizationReference": {
+      "title": "edFi_educationOrganizationReference",
+      "required": [
+        "educationOrganizationId"
+      ],
+      "type": "object",
+      "properties": {
+        "educationOrganizationId": {
+          "format": "int32",
+          "description": "The identifier assigned to an education organization.",
+          "type": "integer"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Link"
+            }
+          ],
+          "readOnly": true
+        }
+      }
+    },
+    "StudentReference": {
+      "title": "edFi_studentReference",
+      "required": [
+        "studentUniqueId"
+      ],
+      "type": "object",
+      "properties": {
+        "studentUniqueId": {
+          "description": "A unique alphanumeric code assigned to a student.",
+          "type": "string"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Link"
+            }
+          ],
+          "readOnly": true
+        }
+      }
+    },
+    "StaffReference": {
+      "title": "edFi_staffReference",
+      "required": [
+        "staffUniqueId"
+      ],
+      "type": "object",
+      "properties": {
+        "staffUniqueId": {
+          "description": "A unique alphanumeric code assigned to a staff.",
+          "type": "string"
+        },
+        "link": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Link"
+            }
+          ],
+          "readOnly": true
+        }
+      }
+    },
+    "AdditionalContext": {
+      "type": "object",
+      "properties": {
+        "identificationCode": {
+          "description": "Custom data element which provides additional context for the result.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "customizationValue": {
+          "description": "Additional context for the result.",
+          "maxLength": 4000,
+          "type": "string"
+        }
+      }
+    },
+    "ValidationResult": {
+      "description": "This is the actual results from the validation rule.",
+      "required": [
+        "educationOrganizationReference",
+        "resultIdentifier",
+        "validationRuleReference"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "resultIdentifier": {
+          "description": "This is a unique id for the validation result.",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "validationRuleReference": {
+          "description": "This refers (foreign key) back up to the validation rule run.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ValidationRuleReference"
+            }
+          ]
+        },
+        "validationRuleRunReference": {
+          "description": "This is a unique id that points back to the validation rule that caused the result to be produced.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ValidationRuleRunReference"
+            }
+          ]
+        },
+        "resourceId": {
+          "description": "This is the unique identifier in the ODS that is used to reference a specific resource.  Examples include an Id, StudentUniqueId or EducationOrganizationId.",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "resourceType": {
+          "description": "This is the resource associated with the validation rule. This is denormalized from the validation rule, every instance of a given RuleId will have the same Ed-Fi resource",
+          "maxLength": 128,
+          "type": "string"
+        },
+        "educationOrganizationReference": {
+          "description": "Along with NameSpace, This is useful for limiting what systems can consume the validation results and routing the validation results within the consuming system.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/EducationOrganizationReference"
+            }
+          ]
+        },
+        "studentReference": {
+          "description": "Reference back to an EdFi student object, when applicable for that validation",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StudentReference"
+            }
+          ]
+        },
+        "staffReference": {
+          "description": "Reference back to an EdFi staff object, when applicable for that validation",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StaffReference"
+            }
+          ]
+        },
+        "namespace": {
+          "description": "Along with EducationOrganization, this can be used for limiting what systems can consume the validation results and routing the validation results within the consuming system.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "additionalContext": {
+          "description": "Includes the details that were used in the evaluation of the validation rule.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdditionalContext"
+          }
+        }
+      }
+    },
+    "ValidationRuleRun": {
+      "description": "This element will track the runs of the validation rules.",
+      "required": [
+        "runIdentifier",
+        "runStartDateTime",
+        "runStatusDescriptor"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "runIdentifier": {
+          "description": "This is a unique Id for each run",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "runStartDateTime": {
+          "format": "date-time",
+          "description": "This is time that the validation run was started.",
+          "type": "string"
+        },
+        "runFinishDateTime": {
+          "format": "date-time",
+          "description": "This is the time the validation run finished.",
+          "type": "string"
+        },
+        "runStatusDescriptor": {
+          "description": "This will denote the status of the validation run.  Possible values include 'Running','Finished','Stopped-manual','Stopped-Error'",
+          "maxLength": 306,
+          "type": "string"
+        },
+        "host": {
+          "description": "The name of the Host or ODS that was evaluated in this run",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "validationEngine": {
+          "description": "A reference to the validation engine that was responsible for this run",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "educationOrganizationReference": {
+          "description": "Organization for which the run was executed.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/EducationOrganizationReference"
+            }
+          ]
+        }
+      }
+    },
+    "ValidationRule": {
+      "description": "Logic which identifies errors within the data or which require further investigation.",
+      "required": [
+        "description",
+        "ruleIdentifier",
+        "ruleSource",
+        "ruleStatusDescriptor",
+        "severityDescriptor"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ruleIdentifier": {
+          "description": "This is the unique Id for a validation rule.",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "ruleSource": {
+          "description": "The source or origin of the rule.",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "helpUrl": {
+          "description": "A link to more information about the rule and how to resolve it.",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "shortDescription": {
+          "description": "This is non-structured ASCII text that will include the short details that were used in the evaluation of the validation rule.",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "description": {
+          "description": "This is non-structured ASCII text that will include the details that were used in the evaluation of the validation rule.",
+          "maxLength": 4000,
+          "type": "string"
+        },
+        "ruleStatusDescriptor": {
+          "description": "The current status of if the rule. Examples are 'Active', 'Under Analysis', 'Inactive', 'Deprecated'.",
+          "maxLength": 50,
+          "type": "string"
+        },
+        "category": {
+          "description": "This is a category for the type of validation rule.  Examples might be 'Student Demographics', 'Special Education', or 'Attendance'",
+          "maxLength": 1024,
+          "type": "string"
+        },
+        "severityDescriptor": {
+          "description": "This specifies whether the validation rule is a 'Warning', 'Minor Validation Error', 'Major Validation Error' or other value standardized by the API",
+          "maxLength": 306,
+          "type": "string"
+        },
+        "externalRuleId": {
+          "description": "Refers back to a unique identifier for this rule in another system (such as a state-maintained repository of validation rules)",
+          "maxLength": 100,
+          "type": "string"
+        },
+        "validationLogicTypeDescriptor": {
+          "description": "Specifies the language that the validation logic is represented in, ie SQL or Pseudo-code",
+          "maxLength": 306,
+          "type": "string"
+        },
+        "validationLogic": {
+          "description": "Has the actual code or pseudo-code that is used to find validation errors.",
+          "maxLength": 4000,
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2_client_credentials": {
+      "type": "oauth2",
+      "description": "Ed-Fi ODS/API OAuth 2.0 Client Credentials Grant Type authorization",
+      "flow": "application",
+      "tokenUrl": "%TOKEN_URL%",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2_client_credentials": []
+    }
+  ]
+}

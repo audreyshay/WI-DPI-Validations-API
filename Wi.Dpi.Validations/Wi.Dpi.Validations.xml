@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wi.Dpi.Validations</name>
+    </assembly>
+    <members>
+        <member name="T:Wi.Dpi.Validations.Controllers.RuleStatusDescriptorsController">
+            <summary>
+            This descriptor describes the status of a validation rule 
+            </summary>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.RuleStatusDescriptorsController.GetAll">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.RuleStatusDescriptorsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Controllers.RunStatusDescriptorsController">
+            <summary>
+            This descriptor describes the status of a validation rule run
+            </summary>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.RunStatusDescriptorsController.GetAll">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.RunStatusDescriptorsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Controllers.SeverityDescriptorsController">
+            <summary>
+            This descriptor describes the severity of a validation rule
+            </summary>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.SeverityDescriptorsController.GetAll">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.SeverityDescriptorsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationLogicTypeDescriptorsController.GetAll">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationLogicTypeDescriptorsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationResultsController.GetAll(Wi.Dpi.Validations.Models.ValidationResultRequest)">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationResultsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationRuleRunsController.GetAll(Wi.Dpi.Validations.Models.ValidationRuleRunRequest)">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationRuleRunsController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationRulesController.GetAll(Wi.Dpi.Validations.Models.ValidationRuleRequest)">
+            <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
+             <response code="200">The requested resources were successfully retrieved.</response>
+        </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidationRulesController.Get(System.String)">
+            <summary>Retrieves a specific resource using the resource's identifier (using the "Get By Id" pattern).</summary>
+             <param name="id">A resource identifier that uniquely identifies the resource.</param>
+             <response code="200">The requested resource was successfully retrieved.</response>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.RuleStatusDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.CodeValue">
+            <summary>
+            A code or abbreviation that is used to refer to the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.Description">
+            <summary>
+            The description of the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.EffectiveBeginDate">
+            <summary>
+            The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.EffectiveEndDate">
+            <summary>
+            The end date of the period when the descriptor is in effect.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.Namespace">
+            <summary>
+            A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.PriorDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RuleStatusDescriptor.ShortDescription">
+            <summary>
+            A shortened description for the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.RunStatusDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.CodeValue">
+            <summary>
+            A code or abbreviation that is used to refer to the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.Description">
+            <summary>
+            The description of the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.EffectiveBeginDate">
+            <summary>
+            The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.EffectiveEndDate">
+            <summary>
+            The end date of the period when the descriptor is in effect.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.Namespace">
+            <summary>
+            A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.PriorDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.RunStatusDescriptor.ShortDescription">
+            <summary>
+            A shortened description for the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.SeverityDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.CodeValue">
+            <summary>
+            A code or abbreviation that is used to refer to the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.Description">
+            <summary>
+            The description of the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.EffectiveBeginDate">
+            <summary>
+            The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.EffectiveEndDate">
+            <summary>
+            The end date of the period when the descriptor is in effect.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.Namespace">
+            <summary>
+            A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.PriorDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.SeverityDescriptor.ShortDescription">
+            <summary>
+            A shortened description for the descriptor.
+            </summary>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor">
+            <summary>
+            This descriptor describes the type of validation logic
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.ValidationLogicTypeDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.CodeValue">
+            <summary>
+            A code or abbreviation that is used to refer to the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.Description">
+            <summary>
+            The description of the descriptor.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.EffectiveBeginDate">
+            <summary>
+            The beginning date of the period when the descriptor is in effect. If omitted, the default is immediate effectiveness.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.EffectiveEndDate">
+            <summary>
+            The end date of the period when the descriptor is in effect.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.Namespace">
+            <summary>
+            A globally unique namespace that identifies this descriptor set. Author is strongly encouraged to use the Universal Resource Identifier (http, ftp, file, etc.) for the source of the descriptor definition. Best practice is for this source to be the descriptor file itself, so that it can be machine-readable and be fetched in real-time, if necessary.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.PriorDescriptorId">
+            <summary>
+            A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationLogicTypeDescriptor.ShortDescription">
+            <summary>
+            A shortened description for the descriptor.
+            </summary>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Models.ValidationResult">
+            <summary>
+            This is the actual results from the validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.ResultIdentifier">
+            <summary>
+            This is a unique id for the validation result.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.ValidationRuleReference">
+            <summary>
+            This refers (foreign key) back up to the validation rule run.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.ValidationRuleRunReference">
+            <summary>
+            This is a unique id that points back to the validation rule that caused the result to be produced.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.ResourceId">
+            <summary>
+            This is the unique identifier in the ODS that is used to reference a specific resource.  Examples include an Id, StudentUniqueId or EducationOrganizationId.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.ResourceType">
+            <summary>
+            This is the resource associated with the validation rule. This is denormalized from the validation rule, every instance of a given RuleId will have the same Ed-Fi resource
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.EducationOrganizationReference">
+            <summary>
+            Along with NameSpace, This is useful for limiting what systems can consume the validation results and routing the validation results within the consuming system. 
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.StudentReference">
+            <summary>
+            Reference back to an EdFi student object, when applicable for that validation
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.StaffReference">
+            <summary>
+            Reference back to an EdFi staff object, when applicable for that validation
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.Namespace">
+            <summary>
+            Along with EducationOrganization, this can be used for limiting what systems can consume the validation results and routing the validation results within the consuming system.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResult.AdditionalContext">
+            <summary>
+            Includes the details that were used in the evaluation of the validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.AdditionalContext.IdentificationCode">
+            <summary>
+            Custom data element which provides additional context for the result.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.AdditionalContext.CustomizationValue">
+            <summary>
+            Additional context for the result.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.ResultIdentifier">
+            <summary>
+            The unique id for a validation result.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.RunIdentifier">
+            <summary>
+            The unique Id for the run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.RuleIdentifier">
+            <summary>
+            The the unique Id for the validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.RuleSource">
+            <summary>
+            The source or origin of the rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.EducationOrganizationId">
+            <summary>
+            The EducationOrganizationId for the organization the validation result is for.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.StudentUniqueId">
+            <summary>
+            The StudentUniqueId for the student the validation result is related to.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.StaffUniqueId">
+            <summary>
+            The StaffUniqueId for the staff the validation result is related to.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.Namespace">
+            <summary>
+            The Namespace the validation result is for.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.ResourceId">
+            <summary>
+            The unique identifier in the ODS that is used to reference a specific resource.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationResultRequest.ResourceType">
+            <summary>
+            The resource associated with the validation rule.
+            </summary>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Models.ValidationRule">
+            <summary>
+            Logic which identifies errors within the data or which require further investigation.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.RuleIdentifier">
+            <summary>
+            This is the unique Id for a validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.RuleSource">
+            <summary>
+            The source or origin of the rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.HelpUrl">
+            <summary>
+            A link to more information about the rule and how to resolve it.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.ShortDescription">
+            <summary>
+            This is non-structured ASCII text that will include the short details that were used in the evaluation of the validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.Description">
+            <summary>
+             This is non-structured ASCII text that will include the details that were used in the evaluation of the validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.RuleStatusDescriptor">
+            <summary>
+            The current status of if the rule. Examples are 'Active', 'Under Analysis', 'Inactive', 'Deprecated'.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.Category">
+            <summary>
+             This is a category for the type of validation rule.  Examples might be 'Student Demographics', 'Special Education', or 'Attendance' 
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.SeverityDescriptor">
+            <summary>
+             This specifies whether the validation rule is a 'Warning', 'Minor Validation Error', 'Major Validation Error' or other value standardized by the API
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.ExternalRuleId">
+            <summary>
+            Refers back to a unique identifier for this rule in another system (such as a state-maintained repository of validation rules)
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.ValidationLogicTypeDescriptor">
+            <summary>
+            Specifies the language that the validation logic is represented in, ie SQL or Pseudo-code
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRule.ValidationLogic">
+            <summary>
+            Has the actual code or pseudo-code that is used to find validation errors.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleReference.RuleIdentifier">
+            <summary>
+            The unique Id for a validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleReference.RuleSource">
+            <summary>
+            The source or origin of the rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.RuleIdentifier">
+            <summary>
+            The unique Id for a validation rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.RuleSource">
+            <summary>
+            The source or origin of the rule.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.RuleStatus">
+            <summary>
+            The current status of if the rule. Examples are 'Active', 'Under Analysis', 'Inactive', 'Deprecated'.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.Category">
+            <summary>
+             A category for the type of validation rule.  Examples might be 'Student Demographics', 'Special Education', or 'Attendance' 
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.SeverityDescriptor">
+            <summary>
+             Whether the validation rule is a 'Warning', 'Minor Validation Error', 'Major Validation Error' or other value standardized by the API
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRequest.ExternalRuleId">
+            <summary>
+            Refers back to a unique identifier for this rule in another system (such as a state-maintained repository of validation rules)
+            </summary>
+        </member>
+        <member name="T:Wi.Dpi.Validations.Models.ValidationRuleRun">
+            <summary>
+            This element will track the runs of the validation rules. 
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.RunIdentifier">
+            <summary>
+            This is a unique Id for each run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.RunStartDateTime">
+            <summary>
+            This is time that the validation run was started.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.RunFinishDateTime">
+            <summary>
+            This is the time the validation run finished.
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.RunStatusDescriptor">
+            <summary>
+            This will denote the status of the validation run.  Possible values include 'Running','Finished','Stopped-manual','Stopped-Error'
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.Host">
+            <summary>
+            The name of the Host or ODS that was evaluated in this run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.ValidationEngine">
+            <summary>
+            A reference to the validation engine that was responsible for this run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRun.EducationOrganizationReference">
+            <summary>
+            Organization for which the run was executed. 
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRunReference.RunIdentifier">
+            <summary>
+            This is a unique Id for each run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRunRequest.RunIdentifier">
+            <summary>
+            The unique Id for a run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRunRequest.Host">
+            <summary>
+            The name of the Host or ODS that was evaluated in a run
+            </summary>
+        </member>
+        <member name="P:Wi.Dpi.Validations.Models.ValidationRuleRunRequest.ValidationEngine">
+            <summary>
+            A reference to the validation engine that was responsible for this run
+            </summary>
+        </member>
+    </members>
+</doc>
