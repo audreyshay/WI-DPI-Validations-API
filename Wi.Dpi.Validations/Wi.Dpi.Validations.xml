@@ -46,6 +46,10 @@
              <param name="id">A resource identifier that uniquely identifies the resource.</param>
              <response code="200">The requested resource was successfully retrieved.</response>
         </member>
+        <member name="M:Wi.Dpi.Validations.Controllers.ValidateController.Get">
+            <summary>Trigger Wisconsin DPI L2 Validations for the associated district(s) and school year.</summary>
+             <response code="200">The L2 Validations was successfully triggered.</response>
+        </member>
         <member name="M:Wi.Dpi.Validations.Controllers.ValidationLogicTypeDescriptorsController.GetAll">
             <summary>Retrieves specific resources using the resource's property values (using the "Get" pattern).</summary>
              <response code="200">The requested resources were successfully retrieved.</response>

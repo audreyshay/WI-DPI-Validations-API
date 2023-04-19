@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -11,15 +11,13 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Validations.json" />
   </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.6.2" />
+    </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
+    <ProjectReference Include="..\..\..\..\edfi\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
+    <ProjectReference Include="..\..\..\..\edfi\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\edfi\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
   </ItemGroup>
 
 </Project>

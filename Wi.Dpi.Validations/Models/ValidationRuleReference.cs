@@ -1,4 +1,4 @@
-using EdFi.Ods.Api.Models;
+﻿using EdFi.Ods.Api.Models;
 using Newtonsoft.Json;
 
 namespace Wi.Dpi.Validations.Models

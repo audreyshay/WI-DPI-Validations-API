@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Wi.Dpi.Validations.Models
 {
-    
+
     public class RuleStatusDescriptor
     {
         public string Id { get; set; }

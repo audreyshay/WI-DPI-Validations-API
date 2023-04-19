@@ -1,15 +1,16 @@
 # Pass-Through Validations API
 
-This is a pass-through version of the Validations API specification.  It is intended for Ed-Fi implementations where an external validation engine and data store exists.  This implementation uses ADO.Net queries against a SQL Server database.  Use of this project requires an understanding of C# and SQL.  It is expected that the code provided will be an initial entry point, but that modifications will be required based on implementation specific needs.
+This is a pass-through version of the Validations API specification.  It is intended for Ed-Fi implementations where an external validation engine and data store exists.  This implementation primarily uses ADO.Net queries against a SQL Server database.  It also includes a custom Validate endpoint to trigger validations from a separate API (not part of the original Validations API specification) and is configured to call a separate API for certain resources for Finance clients.  Use of this project requires an understanding of C# and SQL.  It is expected that the code provided will be an initial entry point, but that modifications will be required based on implementation specific needs.
 
 ## Set Up
 - Set up tables or views in your source database to represent the descriptors and resources in the specification. Details on default referenced views listed below.
 - Add the project to the Ed-Fi-ODS-Implementation\Application folder and include in solution.
 - In EdFi.Ods.WebApi, add a project reference to Wi.Dpi.Validations.
-- In Wi.Dpi.Validations\SqlAccessTokenProvider.cs, configure IsAzure as appropriate for your source database.
-- Add "Collections_Ods" connection string and "Validations" feature to appsettings.json. 
+- In Wi.Dpi.Validations\SqlAccessTokenProvider.cs, assumes a connection string containing "database.windows.net" will require an Azure access token.
+- For Finance API (if using), implement a service which inherits from IWiseMetaService.
+--For Validate resource, 
+- Add "Collections_Ods" connection string, "Validations" feature, "ValidationSettings:CollectionsUrl" and "ValidationSettings:FinanceUrl" to appsettings.json. 
 - Build and run it.  You may need to explicitly clear your cache if "Validations" does not appear in the "Other" section in Swagger.
-
 
 ## Database Tables/Views Referenced
 ### Rule Status Descriptor

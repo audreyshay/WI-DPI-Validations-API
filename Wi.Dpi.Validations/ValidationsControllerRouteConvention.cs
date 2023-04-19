@@ -21,7 +21,9 @@ namespace Wi.Dpi.Validations
         {
             var routePrefix = new AttributeRouteModel { Template = CreateRouteTemplate() };
             var controllers =
-                application.Controllers.Where(x => x.ControllerType == typeof(ValidationRuleRunsController).GetTypeInfo() ||
+                application.Controllers.Where(x => 
+                                                    x.ControllerType == typeof(ValidateController).GetTypeInfo() || 
+                                                    x.ControllerType == typeof(ValidationRuleRunsController).GetTypeInfo() ||
                                                    x.ControllerType == typeof(ValidationRulesController).GetTypeInfo() ||
                                                    x.ControllerType == typeof(ValidationResultsController).GetTypeInfo() ||
                                                    x.ControllerType == typeof(RunStatusDescriptorsController).GetTypeInfo() ||

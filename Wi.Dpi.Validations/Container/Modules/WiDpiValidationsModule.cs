@@ -4,7 +4,7 @@ using EdFi.Ods.Api.Routing;
 using EdFi.Ods.Common.Configuration;
 using EdFi.Ods.Common.Container;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using Wi.Dpi.Domain;
+using Wi.Dpi.Validations.Controllers;
 using Wi.Dpi.Validations.OpenApi;
 using Wi.Dpi.Validations.Repositories;
 using Wi.Dpi.Validations.Repositories.Result;
@@ -22,14 +22,6 @@ namespace Wi.Dpi.Validations.Container.Modules
 
         public override void ApplyConfigurationSpecificRegistrations(ContainerBuilder builder)
         {
-            builder.RegisterType<SqlAccessTokenProvider>()
-                .As<ISqlAccessTokenProvider>()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterType<CollectionsOdsConnectionStringProvider>()
-                .As<ICollectionsOdsConnectionStringProvider>()
-                .SingleInstance();
-
             builder.RegisterType<ValidationsOpenApiContentProvider>()
                 .As<IOpenApiContentProvider>()
                 .InstancePerLifetimeScope();
@@ -50,9 +42,17 @@ namespace Wi.Dpi.Validations.Container.Modules
                 .As<IGetCollectionValidationRules>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<GetFinanceValidationRules>()
+                .As<IGetFinanceValidationRules>()
+                .InstancePerLifetimeScope();
+
             builder.RegisterType<GetValidationResults>()
-               .As<IGetValidationResults>()
-               .InstancePerLifetimeScope();
+                .As<IGetValidationResults>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<GetFinanceValidationResults>()
+                .As<IGetFinanceValidationResults>()
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<GetCollectionValidationResults>()
                 .As<IGetCollectionValidationResults>()
@@ -62,9 +62,13 @@ namespace Wi.Dpi.Validations.Container.Modules
                 .As<IGetValidationRuns>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<GetFinanceValidationRuleRuns>()
+                .As<IGetFinanceValidationRuleRuns>()
+                .InstancePerLifetimeScope();
+
             builder.RegisterType<GetCollectionValidationRuleRuns>()
-              .As<IGetCollectionValidationRuleRuns>()
-              .InstancePerLifetimeScope();
+                .As<IGetCollectionValidationRuleRuns>()
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<GetRuleStatusDescriptors>()
                 .As<IGetRuleStatusDescriptors>()
@@ -82,6 +86,11 @@ namespace Wi.Dpi.Validations.Container.Modules
                 .As<IGetValidationLogicTypeDescriptors>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<EducationOrganizationReferenceProvider>()
+                .As<IEducationOrganizationReferenceProvider>()
+                .InstancePerLifetimeScope();
+
+           
         }
     }
 }

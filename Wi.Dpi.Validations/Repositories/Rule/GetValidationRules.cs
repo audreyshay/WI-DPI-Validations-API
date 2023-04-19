@@ -1,4 +1,4 @@
-﻿using EdFi.Ods.Common.Security;
+using EdFi.Ods.Common.Security;
 using log4net;
 using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Hosting;
@@ -7,33 +7,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Wi.Dpi.Validations.Models;
-using Wi.Dpi.Validations.Repositories.Result;
 
 namespace Wi.Dpi.Validations.Repositories.Rule
 {
     public class GetValidationRules : IGetValidationRules
     {
         private readonly IGetCollectionValidationRules _getCollectionValidationRules;
+        private readonly IGetFinanceValidationRules _getFinanceValidationRules;
         private readonly Func<IApiKeyContextProvider> _apiKeyContextProviderFactory;
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly ILog _logger = LogManager.GetLogger(typeof(GetValidationRules));
 
-        public GetValidationRules(IGetCollectionValidationRules getCollectionValidationRules, Func<IApiKeyContextProvider> apiKeyContextProviderFactory, IWebHostEnvironment webHostEnvironment, TelemetryClient telemetryClient)
+        public GetValidationRules(IGetCollectionValidationRules getCollectionValidationRules, IGetFinanceValidationRules getFinanceValidationRules, Func<IApiKeyContextProvider> apiKeyContextProviderFactory)
         {
             _getCollectionValidationRules = getCollectionValidationRules;
+            _getFinanceValidationRules = getFinanceValidationRules;
             _apiKeyContextProviderFactory = apiKeyContextProviderFactory;
-            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<ValidationRule> GetByIdAsync(string id)
         {
-            var rule = await _getCollectionValidationRules.GetByIdAsync(id);
+            var rule = _apiKeyContextProviderFactory.IsFinance() ?
+                await _getFinanceValidationRules.GetByIdAsync(id) :
+                await _getCollectionValidationRules.GetByIdAsync(id);
             return rule;
         }
 
         public async Task<IList<ValidationRule>> GetAllAsync(ValidationRuleRequest rulesRequest)
         {
-            var rules = await _getCollectionValidationRules.GetAllAsync(rulesRequest);
+            var rules = _apiKeyContextProviderFactory.IsFinance() ?
+                await _getFinanceValidationRules.GetAllAsync(rulesRequest) :
+                await _getCollectionValidationRules.GetAllAsync(rulesRequest);
             return rules.ToList();
 
         }

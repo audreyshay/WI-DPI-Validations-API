@@ -9,7 +9,6 @@ using System.ComponentModel;
 using System.Net;
 using System.Threading.Tasks;
 using Wi.Dpi.Validations.Models;
-using Wi.Dpi.Validations.Repositories;
 using Wi.Dpi.Validations.Repositories.Rule;
 
 namespace Wi.Dpi.Validations.Controllers

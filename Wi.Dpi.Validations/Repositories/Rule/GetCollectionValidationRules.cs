@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EdFi.Ods.Common.Context;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -17,17 +19,25 @@ namespace Wi.Dpi.Validations.Repositories.Rule
     {
         private readonly ICollectionsOdsConnectionStringProvider _odsDatabaseConnectionStringProvider;
         private readonly ISqlAccessTokenProvider _sqlAccessTokenProvider;
+        private readonly Func<ISchoolYearContextProvider> _schoolYearContextProviderFactory;
+        
         private readonly string selectFromView = @"select RuleIdentifier, RuleSource, RuleId, HelpUrl, ShortDescription, Description, RuleStatusDescriptor, 
                                                  Category, SeverityDescriptor,
                                                  ExternalRuleId, ValidationLogicTypeDescriptor, ValidationLogic
                                                  from [dbo].[RulesForValidationsApi] ";
 
-        public GetCollectionValidationRules(ICollectionsOdsConnectionStringProvider odsDatabaseConnectionStringProvider, ISqlAccessTokenProvider sqlAccessTokenProvider)
+        public GetCollectionValidationRules(ICollectionsOdsConnectionStringProvider odsDatabaseConnectionStringProvider, ISqlAccessTokenProvider sqlAccessTokenProvider,
+            Func<ISchoolYearContextProvider> schoolYearContextProviderFactory)
         {
             _odsDatabaseConnectionStringProvider = odsDatabaseConnectionStringProvider;
             _sqlAccessTokenProvider = sqlAccessTokenProvider;
+            _schoolYearContextProviderFactory = schoolYearContextProviderFactory;
         }
 
+        private string YearClause() {
+            var schoolYear = (short)_schoolYearContextProviderFactory().GetSchoolYear();
+            return $" where ((StartSchoolYear is null or StartSchoolYear <= {schoolYear}) and (EndSchoolYear is null or EndSchoolYear >= {schoolYear}))";
+        }
         private void MapRuleFromReader(ValidationRule rule, SqlDataReader reader)
         {
             rule.Id = reader.GetString("RuleId");
@@ -47,12 +57,12 @@ namespace Wi.Dpi.Validations.Repositories.Rule
         public async Task<ValidationRule> GetByIdAsync(string id)
         {
             var rule = new ValidationRule();
-            var sql = $@"{selectFromView}
-                    where RuleId = @id";
+            var sql = $@"{selectFromView} {YearClause()}
+                    and RuleId = @id";
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(); ;
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 
@@ -134,7 +144,7 @@ namespace Wi.Dpi.Validations.Repositories.Rule
             }
 
             var sql =
-                $@"{selectFromView} {(clauses.Any() ? ("where " + string.Join(" and ", clauses)) : "")}
+                $@"{selectFromView}  {YearClause()} {(clauses.Any() ? ("and " + string.Join(" and ", clauses)) : "")}
                     ORDER BY RuleIdentifier
                     OFFSET {rulesRequest.Offset ?? 0} ROWS
                     FETCH NEXT {rulesRequest.Limit} ROWS ONLY;";
@@ -142,7 +152,7 @@ namespace Wi.Dpi.Validations.Repositories.Rule
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken();
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 

@@ -43,7 +43,7 @@ namespace Wi.Dpi.Validations.Repositories
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken();
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 
@@ -76,7 +76,7 @@ namespace Wi.Dpi.Validations.Repositories
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(); ;
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 

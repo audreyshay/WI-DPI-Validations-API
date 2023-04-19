@@ -1,12 +1,12 @@
-﻿using System;
+﻿using EdFi.Ods.Api.Common.Models.Resources.EducationOrganization.EdFi;
+using EdFi.Ods.Common.Context;
+using EdFi.Ods.Common.Security;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using EdFi.Ods.Api.Common.Models.Resources.EducationOrganization.EdFi;
-using EdFi.Ods.Common.Context;
-using EdFi.Ods.Common.Security;
 using Wi.Dpi.Domain;
 using Wi.Dpi.Validations.Models;
 
@@ -59,7 +59,7 @@ namespace Wi.Dpi.Validations.Repositories.RuleRun
             run.RunFinishDateTime = reader.IsDBNull("RunFinishDateTime") ? (DateTime?)null : reader.GetDateTime("RunFinishDateTime");
             run.RunStatusDescriptor = reader.GetString("RunStatusDescriptor");
             run.Host = reader.IsDBNull("Host") ? null : reader.GetString("Host");
-            run.ValidationEngine = reader.IsDBNull("Namespace") ? null : reader.GetString("ValidationEngine");
+            run.ValidationEngine = reader.IsDBNull("ValidationEngine") ? null : reader.GetString("ValidationEngine");
             run.EducationOrganizationReference = reader.IsDBNull("EducationOrganizationId") ? null :
              new EducationOrganizationReference
              {
@@ -80,7 +80,7 @@ namespace Wi.Dpi.Validations.Repositories.RuleRun
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(); ;
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 
@@ -148,7 +148,7 @@ namespace Wi.Dpi.Validations.Repositories.RuleRun
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken();
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 

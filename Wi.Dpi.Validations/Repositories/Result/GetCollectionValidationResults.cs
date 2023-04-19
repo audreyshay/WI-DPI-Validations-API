@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using EdFi.Ods.Api.Common.Models.Resources.EducationOrganization.EdFi;
+﻿using EdFi.Ods.Api.Common.Models.Resources.EducationOrganization.EdFi;
 using EdFi.Ods.Api.Common.Models.Resources.Staff.EdFi;
 using EdFi.Ods.Api.Common.Models.Resources.Student.EdFi;
 using EdFi.Ods.Common.Context;
 using EdFi.Ods.Common.Security;
 using EdFi.Security.DataAccess.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
 using Wi.Dpi.Domain;
 using Wi.Dpi.Validations.Models;
 
@@ -208,7 +208,7 @@ namespace Wi.Dpi.Validations.Repositories.Result
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken();
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 
@@ -242,7 +242,7 @@ namespace Wi.Dpi.Validations.Repositories.Result
 
             using (var conn = new SqlConnection(_odsDatabaseConnectionStringProvider.GetConnectionString()))
             {
-                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(); ;
+                conn.AccessToken = _sqlAccessTokenProvider.GetAccessToken(_odsDatabaseConnectionStringProvider.GetConnectionString()); ;
 
                 await conn.OpenAsync();
 

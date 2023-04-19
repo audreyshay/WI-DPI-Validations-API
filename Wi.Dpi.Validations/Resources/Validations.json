@@ -742,6 +742,37 @@
           }
         }
       }
+    },
+    "/ed-fi-xvalidations/validate": {
+      "get": {
+        "tags": [
+          "validate"
+        ],
+        "summary": "Triggers Wisconsin DPI L2 Validations.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The L2 Validations was successfully triggered."
+          },
+          "400": {
+            "description": "Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values."
+          },
+          "401": {
+            "description": "Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed."
+          },
+          "403": {
+            "description": "Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed."
+          },
+          "404": {
+            "description": "The resource could not be found."
+          },
+          "500": {
+            "description": "An unhandled error occurred on the server. See the response body for details."
+          }
+        }
+      }
     }
   },
   "definitions": {
